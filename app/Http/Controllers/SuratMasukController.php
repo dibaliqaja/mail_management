@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 class SuratMasukController extends Controller
 {
-    public function Index()
+    public function Index(Request $request)
     {
-        $data_surat_masuk = \App\SuratMasuk::all(); 
+        if ($request->has('cari')) {
+            $data_surat_masuk = \App\SuratMasuk::where('mail_isi_surat','LIKE','%'.$request->cari.'%')->get(); 
+        } else {
+            $data_surat_masuk = \App\SuratMasuk::all(); 
+        }
         return view('suratmasuk.index', ['data_surat_masuk' => $data_surat_masuk]);
     }
     
