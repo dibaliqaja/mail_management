@@ -39,19 +39,19 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="no_surat">No Surat</label>
-                                    <input type="text" name="mail_no_surat_masuk" class="form-control" id="no_surat">
+                                    <input type="text" name="mail_no_surat_masuk" class="form-control" id="no_surat" placeholder="00/PAN/INSTANSI/XII/0000">
                                 </div>
                                 <div class="form-group">
                                     <label for="asal_surat">Asal Surat</label>
-                                    <input type="text" name="mail_asal_surat" class="form-control" id="asal_surat">
+                                    <input type="text" name="mail_asal_surat" class="form-control" id="asal_surat" placeholder="Nama Instansi">
                                 </div>
                                 <div class="form-group">
                                     <label for="isi_surat">Isi Surat</label>
-                                    <input type="text" name="mail_isi_surat" class="form-control" id="isi_surat">
+                                    <input type="text" name="mail_isi_surat" class="form-control" id="isi_surat" placeholder="Perihal Surat">
                                 </div>
                                 <div class="form-group">
                                     <label for="kode_surat">Kode Surat</label>
-                                    <input type="text" name="mail_kode" class="form-control" id="kode_surat">
+                                    <input type="text" name="mail_kode" class="form-control" id="kode_surat" placeholder="A">
                                 </div>
                                 <div class="form-group">
                                     <label for="tgl_surat">Tanggal Surat</label>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="keterangan_masuk">Keterangan</label>
-                                    <input type="text" name="mail_keterangan_masuk" class="form-control" id="keterangan_masuk">
+                                    <input type="text" name="mail_keterangan_masuk" class="form-control" id="keterangan_masuk" placeholder="Keterangan Surat">
                                 </div>
                                 </div>
                                 <div class="modal-footer">
@@ -91,6 +91,7 @@
                         <th scope="col">Tgl Terima</th>
                         <th scope="col">File</th>
                         <th scope="col">Keterangan</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <?php $no = 0; ?>
@@ -106,6 +107,7 @@
                         <td>{{ $surat_masuk->mail_tgl_terima }}</td>
                         <td>{{ $surat_masuk->mail_file_masuk }}</td>
                         <td>{{ $surat_masuk->mail_keterangan_masuk }}</td>
+                        <td><a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/edit" class="btn btn-warning btn-sm">Edit</a></td>
                     @endforeach
                 </tbody>
             </table>

@@ -30,4 +30,17 @@ class SuratMasukController extends Controller
         // \App\SuratMasuk::create($request->all());
         return redirect('/suratmasuk')->with("Sukses", "Berhasil Ditambahkan");
     }
+
+    public function Edit($mail_id_surat_masuk)
+    {
+        $data = \App\SuratMasuk::find($mail_id_surat_masuk);
+        return view('suratmasuk/edit',['data' => $data]);
+    }
+
+    public function Update(Request $request, $mail_id_surat_masuk)
+    {
+        $data = \App\SuratMasuk::find($mail_id_surat_masuk);
+        $data->update($request->all());
+        return redirect('/suratmasuk')->with('Sukses','Berhasil Diganti');
+    }
 }

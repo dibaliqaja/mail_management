@@ -18,3 +18,5 @@ Route::get('/', function () {
 // Surat Masuk
 Route::get('/suratmasuk','SuratMasukController@Index');
 Route::post('/suratmasuk/create','SuratMasukController@Create');
+Route::get('/suratmasuk/{mail_id_surat_masuk}/edit','SuratMasukController@Edit');
+Route::post('/suratmasuk/{mail_id_surat_masuk}/update','SuratMasukController@Update');
