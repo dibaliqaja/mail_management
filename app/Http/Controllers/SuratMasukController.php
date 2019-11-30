@@ -43,4 +43,11 @@ class SuratMasukController extends Controller
         $data->update($request->all());
         return redirect('/suratmasuk')->with('Sukses','Berhasil Diganti');
     }
+
+    public function Delete($mail_id_surat_masuk)
+    {
+        $data = \App\SuratMasuk::find($mail_id_surat_masuk);
+        $data->delete($data);
+        return redirect('/suratmasuk')->with('Sukses','Berhasil Dihapus');
+    }
 }

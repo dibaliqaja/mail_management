@@ -99,7 +99,10 @@
                         <td>{{ $surat_masuk->mail_tgl_terima }}</td>
                         <td>{{ $surat_masuk->mail_file_masuk }}</td>
                         <td>{{ $surat_masuk->mail_keterangan_masuk }}</td>
-                        <td><a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                        <td>
+                            <a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Data akan Dihapus?')">Delete</a>
+                        </td>
                     @endforeach
                 </tbody>
             </table>
