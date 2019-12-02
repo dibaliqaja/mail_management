@@ -19,6 +19,9 @@ class SuratMasukController extends Controller
     
     public function Create(Request $request)
     {
+        $request->validate([
+            'mail_file_masuk' => 'mimes:jpg,jpeg,png,doc,docx,pdf | max:3024',
+        ]);
         $res = new SuratMasuk();
         $res->mail_no_surat_masuk   = $request->input('mail_no_surat_masuk');
         $res->mail_asal_surat       = $request->input('mail_asal_surat');

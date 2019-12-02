@@ -7,6 +7,15 @@
                 {{ session('Sukses') }}
             </div>
         @endif
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-6">
                 <h3>Data Surat Masuk</h3>
@@ -71,6 +80,7 @@
                     </div>
                 </div>
             </div>
+            <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -99,13 +109,14 @@
                         <td>{{ $surat_masuk->mail_tgl_terima }}</td>
                         <td>{{ $surat_masuk->mail_file_masuk }}</td>
                         <td>{{ $surat_masuk->mail_keterangan_masuk }}</td>
-                        <td>
+                        <td colspan="2">
                             <a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/edit" class="btn btn-warning btn-sm">Edit</a>
                             <a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Data akan Dihapus?')">Delete</a>
                         </td>
                     @endforeach
                 </tbody>
             </table>
+            </div>
         </div>
 
 @endsection

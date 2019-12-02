@@ -24,7 +24,37 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/suratmasuk">Surat Masuk</a>
-                    <a class="dropdown-item" href="/suratkeluar">Surat Keluar</a>
+                    <a class="dropdown-item" href="#">Surat Keluar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Buku Agenda
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Surat Masuk</a>
+                    <a class="dropdown-item" href="#">Surat Keluar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Galeri File
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Surat Masuk</a>
+                    <a class="dropdown-item" href="#">Surat Keluar</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Klasifikasi<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pengaturan
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Instansi</a>
+                    <a class="dropdown-item" href="#">User</a>
                 </div>
             </li>
             </ul>
