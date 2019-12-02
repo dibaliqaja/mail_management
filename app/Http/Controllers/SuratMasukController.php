@@ -20,7 +20,7 @@ class SuratMasukController extends Controller
     public function Create(Request $request)
     {
         $request->validate([
-            'mail_file_masuk' => 'mimes:jpg,jpeg,png,doc,docx,pdf | max:3024',
+            'mail_file_masuk.*' => 'mimes:jpg,jpeg,png,doc,docx,pdf | max:3024'
         ]);
         $res = new SuratMasuk();
         $res->mail_no_surat_masuk   = $request->input('mail_no_surat_masuk');
@@ -31,8 +31,9 @@ class SuratMasukController extends Controller
         $res->mail_tgl_terima       = $request->input('mail_tgl_terima');
         $res->mail_keterangan_masuk = $request->input('mail_keterangan_masuk');
         $file = $request->file('mail_file_masuk');
-        $file->move('datamasuk/', $file->getClientOriginalName());
-        $res->mail_file_masuk       = $file->getClientOriginalName();
+        $fileName = 'qia-' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move('datamasuk/', $fileName);
+        $res->mail_file_masuk       = $fileName;
         $res->save();
         // \App\SuratMasuk::create($request->all());
         return redirect('/suratmasuk')->with("Sukses", "Berhasil Ditambahkan");

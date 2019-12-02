@@ -107,7 +107,7 @@
                         <td>{{ $surat_masuk->mail_kode }}</td>
                         <td>{{ $surat_masuk->mail_tgl_surat }}</td>
                         <td>{{ $surat_masuk->mail_tgl_terima }}</td>
-                        <td>{{ $surat_masuk->mail_file_masuk }}</td>
+                        <td><a href="/datamasuk/{{ $surat_masuk->mail_file_masuk }}">{{ $surat_masuk->mail_file_masuk }}</a></td>
                         <td>{{ $surat_masuk->mail_keterangan_masuk }}</td>
                         <td colspan="2">
                             <a href="/suratmasuk/{{ $surat_masuk->mail_id_surat_masuk }}/edit" class="btn btn-warning btn-sm">Edit</a>
